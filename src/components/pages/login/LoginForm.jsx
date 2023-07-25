@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 const LoginForm = () => {
 	const handleSubmit = event => {
 		event.preventDefault();
-		alert(`Bonjour ${name} `);
+		// alert(`Bonjour ${name} `);
+
 		setName('');
 	};
 	const [name, setName] = useState('');
@@ -23,7 +24,7 @@ const LoginForm = () => {
 				onChange={handleName}
 				required
 			/>
-			<Link to="/orderpage">Accédez à votre espace</Link>
+			<Link to="/order">Accédez à votre espace</Link>
 		</form>
 	);
 };

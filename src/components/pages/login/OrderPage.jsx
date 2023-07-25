@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom';
+
 const OrderPage = () => {
 	return (
 		<div>
-			<h1>Order Page</h1>
-			<Link>Déconnexion</Link>
+			<h1>Bonjour, </h1>
+			<Link to="/">Déconnexion</Link>
 		</div>
 	);
 };

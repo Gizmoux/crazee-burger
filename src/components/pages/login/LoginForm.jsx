@@ -1,16 +1,21 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 const LoginForm = () => {
+	// States
+	const [name, setName] = useState('');
+	const navigate = useNavigate();
+	// Comportements
 	const handleSubmit = event => {
 		event.preventDefault();
-		// alert(`Bonjour ${name} `);
-
+		// alert(`Bonjour `);
 		setName('');
+		navigate(`order/${name}`);
 	};
-	const [name, setName] = useState('');
 	const handleName = event => {
 		setName(event.target.value);
+		// console.log(event.target.value);
 	};
+	// Affichage
 	return (
 		<form onSubmit={handleSubmit}>
 			<h1>Bienvenue chez nous !</h1>
@@ -18,13 +23,11 @@ const LoginForm = () => {
 			<input
 				type="text"
 				placeholder="Entrez votre prénom"
-				id="name"
-				name="email"
 				value={name}
 				onChange={handleName}
 				required
 			/>
-			<Link to="/order">Accédez à votre espace</Link>
+			<button>Accédez à votre page</button>
 		</form>
 	);
 };
